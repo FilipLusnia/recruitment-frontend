@@ -1,0 +1,16 @@
+@use './../variables.scss' as vars;
+
+.container {
+	padding: 100px 20px 100px;
+	display: flex;
+	justify-content: center;
+
+	h1{
+		text-align: center;
+		color: vars.$textColor;
+		
+		span {
+			color: vars.$accentColor;
+		}
+	}
+}

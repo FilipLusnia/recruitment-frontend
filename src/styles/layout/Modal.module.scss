@@ -1,0 +1,110 @@
+@use '../variables' as vars;
+@use './../mixins' as mixins;
+
+.modalBackground {
+    z-index: 20;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #000000b0;
+	backdrop-filter: blur(3px);
+	transition: vars.$transitionTime;
+	opacity: 0;
+	visibility: hidden;
+
+	&.bgVisible {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.modal {
+	width: 80vw;
+    max-width: 600px;
+    max-height: 80vh;
+    z-index: 20;
+	background-color: vars.$backgroundColor;
+    border-radius: vars.$bigBorderRadius;
+    padding: 20px;
+	box-sizing: border-box;
+    overflow-y: auto;
+	transition: vars.$longTransitionTime;
+    transform: translateY(5px);
+	opacity: 0;
+	visibility: hidden;
+
+	&.modalVisible {
+		opacity: 1;
+		transform: translateY(0px);
+		visibility: visible;
+	}
+	
+	&Top {
+		width: 100%;
+
+		&Title {
+			word-break: break-word;
+			color: vars.$textColor;
+		}
+
+		&Upper {
+			display: flex;
+			justify-content: flex-end;
+
+			&Close {
+				@include mixins.icon-btn();
+			}
+		}
+	}
+
+	&Content {
+		width: 100%;
+		margin-top: 30px;
+
+		label {
+			margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+
+			p {
+				font-size: 0.7rem;
+			}
+			
+			input, textarea {
+				@include mixins.input();
+				margin-top: 10px;
+			}
+		}
+	}
+
+	&Buttons {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		&Single {
+			@include mixins.button();
+			width: 100%;
+			margin-top: 20px;
+
+			&.Alt {
+				background-color: transparent;
+				border: 2px solid vars.$accentColor;
+				color: vars.$textColor;
+			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.modal {
+		width: 95vw;
+	}
+}

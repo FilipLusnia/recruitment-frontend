@@ -1,0 +1,82 @@
+@use './../variables.scss' as vars;
+@use './../mixins' as mixins;
+
+.item {
+	width: 100%;
+	background-color: vars.$accentColor;
+	border-radius: vars.$borderRadius;
+	color: vars.$textColor;
+	margin-top: 30px;
+	padding: 20px;
+	box-sizing: border-box;
+	box-shadow: vars.$shadow;
+
+	p {
+		margin-top: 20px;
+		text-decoration: line-through
+	}
+
+	&Top {
+		display: flex;
+		justify-content: space-between;
+
+		&Title {
+			display: flex;
+			align-items: center;
+			margin-right: 50px;
+
+			h2 {
+				margin-right: 20px;
+			}
+
+			svg {
+				@include mixins.big-icon();
+			}
+		}
+
+		&Buttons {
+			display: flex;
+
+			&Delete {
+				height: 40px;
+				width: auto;
+				display: flex;
+				align-items: center;
+				background-color: vars.$whiteColor;
+				border-radius: vars.$bigBorderRadius;
+				color: vars.$altTextColor;
+				margin-left: 10px;
+				overflow: hidden;
+
+				button {
+					background-color: vars.$blackColor;
+					margin-left: 0;
+	
+					svg {
+						fill: vars.$textColor;
+					}
+
+					&:last-child {
+						background-color: tomato;
+					}
+				}
+
+				p {
+					margin: 0 10px 0;
+					font-size: 0.7rem;
+					text-decoration: none;
+				}
+			}
+
+			&Single {
+				@include mixins.icon-btn();
+				background-color: vars.$whiteColor;
+				margin-left: 10px;
+
+				svg {
+					fill: vars.$altTextColor;
+				}
+			}
+		}
+	}
+}

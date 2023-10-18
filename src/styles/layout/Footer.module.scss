@@ -1,0 +1,23 @@
+@use './../variables.scss' as vars;
+
+.footer {
+	text-align: center;
+	padding: 50px;
+	margin-top: 50px;
+	color: vars.$textColor;
+	position: relative;
+	
+	p {
+		font-size: 0.6rem;
+	}
+
+	::after {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 5%;
+		height: 2px;
+		width: 90%;
+		background-color: rgba(vars.$whiteColor, 0.1);
+	}
+}

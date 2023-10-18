@@ -1,0 +1,66 @@
+@use './../variables.scss' as vars;
+@use './../mixins' as mixins;
+
+.item {
+	width: 100%;
+	background-color: vars.$backgroundColor;
+	border-radius: vars.$borderRadius;
+	color: vars.$textColor;
+	margin-top: 30px;
+	padding: 20px;
+	box-sizing: border-box;
+	box-shadow: vars.$shadow;
+
+	p {
+		margin-top: 20px;
+	}
+
+	&Top {
+		display: flex;
+		justify-content: space-between;
+
+		h2 {
+			margin-right: 50px;
+		}
+
+		&Buttons {
+			display: flex;
+
+			&Delete {
+				height: 40px;
+				width: auto;
+				display: flex;
+				align-items: center;
+				background-color: vars.$whiteColor;
+				border-radius: vars.$bigBorderRadius;
+				color: vars.$altTextColor;
+				margin-left: 10px;
+				overflow: hidden;
+
+				button {
+					margin-left: 0;
+
+					&:last-child {
+						background-color: tomato;
+					}
+				}
+
+				p {
+					margin: 0 10px 0;
+					font-size: 0.7rem;
+				}
+			}
+
+			&Single {
+				@include mixins.icon-btn();
+				margin-left: 10px;
+			}
+		}
+	}
+
+	&Donebtn {
+		@include mixins.button();
+		margin-top: 30px;
+		width: 100%;
+	}
+}

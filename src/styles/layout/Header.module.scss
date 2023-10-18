@@ -1,0 +1,36 @@
+@use './../variables.scss' as vars;
+
+.header {
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+	pointer-events: none;
+	z-index: 1;
+
+	&Appname {
+		border-radius: 0 0 vars.$borderRadius vars.$borderRadius;
+		background-color: vars.$whiteColor;
+		color: vars.$altTextColor;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 5px 50px;
+		box-sizing: border-box;
+		box-shadow: vars.$strongShadow;
+		pointer-events: all;
+
+		&Text {
+
+			span {
+				color: vars.$accentColor;
+				font-weight: 700;
+			}
+		}
+
+		&Subtext {
+			font-size: 0.6rem;
+			margin-top: 5px;
+		}
+	}
+}
