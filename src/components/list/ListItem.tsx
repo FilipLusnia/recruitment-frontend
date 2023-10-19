@@ -3,6 +3,7 @@ import { useAppDispatch } from '../../redux/hooks';
 import { changeTodoState, deleteTodo, editTodo } from '../../redux/slices/todoSlice';
 import { ListItemProps } from '../../types/list/ListItem';
 import Modal from '../layout/Modal';
+import { transitionTime } from '../../constants';
 import styles from '../../styles/list/ListItem.module.scss';
 import modalStyles from '../../styles/layout/Modal.module.scss';
 
@@ -14,6 +15,7 @@ function ListItem({ title, desc, id, completed }: ListItemProps) {
 	const [ todoContent, setTodoContent ] = useState({ title: title, id: id, desc: desc, completed: completed })
 	const [ editMode, setEditMode ] = useState(false);
 	const [ confirmDelete, setConfirmDelete ] = useState(false);
+	const [ disappearDelay, setDisappearDelay ] = useState(false);
 	const dispatch = useAppDispatch();
 	
 	const closeModal = useCallback(() => {
@@ -44,7 +46,7 @@ function ListItem({ title, desc, id, completed }: ListItemProps) {
 				</div>
 			</Modal>
 
-			<div className={styles.item}>
+			<div className={`${styles.item} ${disappearDelay ? styles.DisappearTile : ''}`}>
 				<div className={styles.itemTop}>
 					<h2>{title}</h2>
 					<div className={styles.itemTopButtons}>
@@ -57,7 +59,17 @@ function ListItem({ title, desc, id, completed }: ListItemProps) {
 									<CloseIcon/>
 								</button>
 								<p>Delete?</p>
-								<button onClick={() => dispatch(deleteTodo(id))} className={styles.itemTopButtonsSingle} title="Delete task" aria-label='delete'>
+								<button 
+									onClick={() => {
+										setDisappearDelay(true)
+										setTimeout(() => {
+											dispatch(deleteTodo(id))
+										}, transitionTime)
+									}} 
+									className={styles.itemTopButtonsSingle} 
+									title="Delete task" 
+									aria-label='delete'
+								>
 									<TrashIcon/>
 								</button>
 							</div>
@@ -69,7 +81,17 @@ function ListItem({ title, desc, id, completed }: ListItemProps) {
 					</div>
 				</div>
 				<p>{desc}</p>
-				<button onClick={() => dispatch(changeTodoState(id))} className={styles.itemDonebtn}>Done</button>
+				<button 
+					onClick={() => {
+						setDisappearDelay(true)
+						setTimeout(() => {
+							dispatch(changeTodoState(id))
+						}, transitionTime)
+					}} 
+					className={styles.itemDonebtn}
+				>
+					Done
+				</button>
 			</div>
 		</>
 	)

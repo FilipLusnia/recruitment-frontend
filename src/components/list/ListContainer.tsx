@@ -11,7 +11,7 @@ import modalStyles from '../../../src/styles/layout/Modal.module.scss';
 
 import PlusIcon from '../../assets/icons/plus_icon.svg?react';
 
-export const emptyTodo = { title: '', desc: '', completed: false, id: '' };
+export const emptyTodo = { id: '', title: '', desc: '', completed: false };
 
 function ListContainer() {
 	const todos = useAppSelector(state => state.todos);
@@ -66,7 +66,7 @@ function ListContainer() {
 					</div>
 					<div className={styles.listAdd}>
 						<button className={styles.listAddBtn} onClick={() => setAddMode(true)}>
-							<p>Add TODO</p>
+							<p>New</p>
 							<PlusIcon/>
 						</button>
 					</div>

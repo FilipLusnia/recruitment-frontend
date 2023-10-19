@@ -8,9 +8,27 @@
 	h1{
 		text-align: center;
 		color: vars.$textColor;
-		
-		span {
+	}
+
+	.animtext {
+		display: inline-block;
+		animation: showAnimtext 1s;
+
+		@keyframes showAnimtext {
+			0% { opacity: 0; transform: translateY(10px); }
+			50% { opacity: 0; transform: translateY(10px); }
+			100% { opacity: 1; transform: translateY(0px); }
+		}
+
+		&Alt {
+			display: inline-block;
 			color: vars.$accentColor;
+			animation: showAltAnimtext 0.5s;
+
+			@keyframes showAltAnimtext {
+				0% { opacity: 0; transform: translateY(10px); }
+				100% { opacity: 1; transform: translateY(0px); }
+			}
 		}
 	}
 }

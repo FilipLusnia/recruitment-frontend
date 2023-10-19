@@ -47,6 +47,19 @@
 			border-radius: 30px;
 			padding: 30px;
 			box-shadow: vars.$strongShadow;
+			animation: showAddBtn 1.5s, shineAddBtn 3s infinite linear;
+	
+			@keyframes shineAddBtn {
+				0% { background-color: vars.$accentColor; }
+				50% { background-color: vars.$altAccentColor; transform: scale(1.02); }
+				100% { background-color: vars.$accentColor; }
+			}
+
+			@keyframes showAddBtn {
+				0% { opacity: 0; transform: translateY(10px); }
+				66% { opacity: 0; transform: translateY(10px); }
+				100% { opacity: 1; transform: translateY(0px); }
+			}
 
 			p {
 				margin-right: 10px;
@@ -55,6 +68,17 @@
 			svg {
 				@include mixins.icon();
 			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+
+	.list {
+	
+		&Add {
+			right: 20px;
+			bottom: 20px;
 		}
 	}
 }

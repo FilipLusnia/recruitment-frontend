@@ -1,34 +1,31 @@
-# Zadanie rekrutacyjne
+# Avalio recruitment task
 
-**Cel:**
-Stworzenie prostego interfejsu użytkownika do zarządzania listą zadań (to-do) z wykorzystaniem React, SCSS, Redux oraz kreatywnego myślenia w kontekście UX/UI.
+Project created with [Vite](https://vitejs.dev/).
 
-## Specyfikacja:
-1. **Stworzenie nowego projektu z wykorzystaniem Create React App.**
-2. **Interfejs:**
-    - Strona główna powinna zawierać listę zadań oraz pole do dodawania nowych zadań.
-    - Każde zadanie powinno zawierać tekst oraz przycisk do jego usunięcia.
-    - Powinna być możliwość oznaczenia zadania jako "zrobione", co powoduje przesunięcie go na dół listy i zmianę jego wyglądu (np. przekreślenie).
-    - Wykorzystaj SCSS (css modules) do stworzenia stylów strony. Zachęcamy do kreatywnego podejścia i stworzenia atrakcyjnego, intuicyjnego interfejsu.
+Demo is available here: [Demo](https://filiplusnia.github.io/recruitment-frontend/)
 
-3. **Stan aplikacji:**
-    - Użyj Redux do zarządzania stanem aplikacji. Stan powinien zawierać listę zadań oraz informacje o tym, czy dane zadanie zostało wykonane.
+## Starting the project locally
 
-4. **Dodatkowe punkty za:**
-    - Responsywność – aplikacja powinna wyglądać dobrze zarówno na komputerach, jak i urządzeniach mobilnych.
-    - Stworzenie prostego testu jednostkowego do jednego z komponentów.
-    - Optymalizacja wydajności oraz dbanie o czystość kodu.
+To run the app
 
-## Instrukcje:
-1. Utwórz fork repozytorium udostępnionego przez nas na GitHub [pod tym linkiem](https://github.com/Dentametr/recruitment-frontend).
-2. Po zakończeniu zadania, wyślij link do Twojego forka na adres: info@avalio.io.
-3. Upewnij się, że zawarłeś/aś wszystkie niezbędne instrukcje w README, abyśmy mogli uruchomić Twoją aplikację lokalnie (możesz nadpisać ten plik).
+### `npm i`
 
-## Ocenianie:
-Przy ocenie będziemy zwracać uwagę na:
-- Jakość kodu (czystość, struktura).
-- Wykorzystanie technologii (React, Redux, SCSS).
-- Kreatywność w kontekście UX/UI.
-- Responsywność oraz ogólną funkcjonalność aplikacji.
+Installs required dependencies
 
-**Powodzenia!** 
+### `npm run dev`
+
+Lauunches the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Functionalities 
+
+### Mentioned in requirements
+
+* Adding todos
+* Deleting todos
+* Marking todos as completed
+
+### Additional
+
+* Editing todos
+* Todos save in local storage through redux middleware

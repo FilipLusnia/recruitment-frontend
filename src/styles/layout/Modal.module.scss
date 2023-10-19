@@ -12,7 +12,7 @@
     top: 0;
     left: 0;
     overflow: hidden;
-    background-color: #000000b0;
+    background-color: #000000b2;
 	backdrop-filter: blur(3px);
 	transition: vars.$transitionTime;
 	opacity: 0;
@@ -80,6 +80,10 @@
 			input, textarea {
 				@include mixins.input();
 				margin-top: 10px;
+			}
+
+			textarea {
+				min-height: 150px;
 			}
 		}
 	}

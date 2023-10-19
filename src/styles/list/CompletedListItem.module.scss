@@ -10,6 +10,23 @@
 	padding: 20px;
 	box-sizing: border-box;
 	box-shadow: vars.$shadow;
+	animation: appearTile vars.$transitionTime;
+
+	@keyframes appearTile {
+		0% { opacity: 0; transform: translateX(-10px); }
+		100% { opacity: 1; transform: translateX(0px); }
+	}
+
+	&.DisappearTile {
+		opacity: 0;
+		transform: translateY(10px);
+		animation: disappearTile vars.$transitionTime;
+	
+		@keyframes disappearTile {
+			0% { opacity: 1; transform: translateX(0px); }
+			100% { opacity: 0; transform: translateX(10px); }
+		}
+	}
 
 	p {
 		margin-top: 30px;
@@ -73,9 +90,32 @@
 				background-color: vars.$whiteColor;
 				margin-left: 10px;
 
+				&:first-child {
+					margin-left: 0;
+				}
+
 				svg {
 					fill: vars.$altTextColor;
 				}
+			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+
+	.item {
+
+		&Top {
+			flex-direction: column-reverse;	
+
+			&Title {
+				margin-top: 20px;
+				margin-right: 0;
+			}
+
+			&Buttons {
+				justify-content: end;
 			}
 		}
 	}
