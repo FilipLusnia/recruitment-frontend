@@ -10,11 +10,11 @@ Demo is available here: [Demo](https://filiplusnia.github.io/recruitment-fronten
 
 To run the app, type these commands in the root directory of the project:
 
-### `npm i`
+`npm i`
 
 Installs required dependencies.
 
-### `npm run dev`
+`npm run dev`
 
 Launches the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -23,7 +23,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 App has a simple unit test. When in the root directory of the project, type:
 
-### `npm run test`
+`npm run test`
 
 This test will check whether ListItem component renders title and description properly.
 
