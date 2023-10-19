@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from '../../../src/styles/layout/Modal.module.scss';
+import { transitionTime } from '../../constants';
 import { ModalProps } from '../../types/layout/Modal';
 
 import CloseIcon from '../../assets/icons/close_icon.svg?react';
@@ -9,7 +10,7 @@ function Modal({ children, title, isOpen, closeFunc }: ModalProps) {
 	
     useEffect(() => {
 		document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-		isOpen ? setRenderModalContent(true) : setTimeout(() => setRenderModalContent(false), 300) // 0.3s css transition
+		isOpen ? setRenderModalContent(true) : setTimeout(() => setRenderModalContent(false), transitionTime) 
     }, [isOpen])
 	
     return (
@@ -23,7 +24,7 @@ function Modal({ children, title, isOpen, closeFunc }: ModalProps) {
 									<CloseIcon className='modal_top_upper_close_icon'/>
 								</button>
 							</div>
-							<h2 className={styles.modalTopTitle}>{(title && title.length > 0) ? title : 'Info'}</h2>
+							<h2 className={styles.modalTopTitle}>{title.length > 0 ? title : 'Info'}</h2>
 						</div>
 						<div className={styles.modalContent}>
 							{children}

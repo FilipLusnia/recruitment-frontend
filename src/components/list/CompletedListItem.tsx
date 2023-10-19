@@ -1,23 +1,27 @@
 import { useState } from 'react';
+import { useAppDispatch } from '../../redux/hooks';
+import { changeTodoState, deleteTodo } from '../../redux/slices/todoSlice';
 import styles from '../../styles/list/CompletedListItem.module.scss';
+import { ListItemProps } from '../../types/list/ListItem';
 
 import CheckIcon from '../../assets/icons/check_icon.svg?react';
 import CloseIcon from '../../assets/icons/close_icon.svg?react';
 import UndoIcon from '../../assets/icons/undo_icon.svg?react';
 import TrashIcon from '../../assets/icons/trash_icon.svg?react';
 
-function CompletedListItem() {
+function CompletedListItem({ title, desc, id }: ListItemProps) {
 	const [ confirmDelete, setConfirmDelete ] = useState(false);
+	const dispatch = useAppDispatch();
 
 	return (
 		<div className={styles.item}>
 			<div className={styles.itemTop}>
 				<div className={styles.itemTopTitle}>
-					<h2>Task</h2>
+					<h2>{title}</h2>
 					<CheckIcon/>
 				</div>
 				<div className={styles.itemTopButtons}>
-					<button className={styles.itemTopButtonsSingle} title="Undo completing" aria-label='undo'>
+					<button onClick={() => dispatch(changeTodoState(id))} className={styles.itemTopButtonsSingle} title="Undo completing" aria-label='undo'>
 						<UndoIcon/>
 					</button>
 					{confirmDelete ?
@@ -26,7 +30,7 @@ function CompletedListItem() {
 								<CloseIcon/>
 							</button>
 							<p>Delete?</p>
-							<button className={styles.itemTopButtonsSingle} title="Delete task" aria-label='delete'>
+							<button onClick={() => dispatch(deleteTodo(id))} className={styles.itemTopButtonsSingle} title="Delete task" aria-label='delete'>
 								<TrashIcon/>
 							</button>
 						</div>
@@ -37,7 +41,7 @@ function CompletedListItem() {
 					}
 				</div>
 			</div>
-			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus iusto velit recusandae consectetur facere reprehenderit. Sit, omnis. Nesciunt, nemo iste.</p>
+			<p>{desc}</p>
 		</div>
 	)
 }

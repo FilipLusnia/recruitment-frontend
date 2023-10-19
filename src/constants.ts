@@ -1,0 +1,1 @@
+export const transitionTime = 200; // 0.2s scss transitionTime var
