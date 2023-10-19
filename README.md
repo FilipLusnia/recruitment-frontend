@@ -1,12 +1,15 @@
 # Avalio recruitment task
 
-Project created with [Vite](https://vitejs.dev/).
+Simple to-do app, created with [Vite](https://vitejs.dev/).
 
+
+## Demo
 Demo is available here: [Demo](https://filiplusnia.github.io/recruitment-frontend/)
+
 
 ## Starting the project locally
 
-To run the app
+To run the app, type these commands in the root directory of the project:
 
 ### `npm i`
 
@@ -14,8 +17,9 @@ Installs required dependencies
 
 ### `npm run dev`
 
-Lauunches the app in the development mode.\
+Launches the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 
 ## Functionalities 
 
