@@ -16,7 +16,7 @@ Installs required dependencies.
 
 `npm run dev`
 
-Launches the app in the development mode.\
+Launches the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Unit test
