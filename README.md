@@ -1,6 +1,6 @@
 # Avalio recruitment task
 
-Simple to-do app, created with [Vite](https://vitejs.dev/).
+Simple to-do app, created with [Vite](https://vitejs.dev/).\
 There is few predefined todos included.
 
 ## Demo
@@ -12,7 +12,7 @@ To run the app, type these commands in the root directory of the project:
 
 ### `npm i`
 
-Installs required dependencies
+Installs required dependencies.
 
 ### `npm run dev`
 
@@ -25,7 +25,7 @@ App has a simple unit test. When in the root directory of the project, type:
 
 ### `npm run test`
 
-This test will check whether list items render title and description properly.
+This test will check whether ListItem component renders title and description properly.
 
 
 ## Functionalities 
