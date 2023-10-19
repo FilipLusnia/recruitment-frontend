@@ -23,7 +23,17 @@ function CompletedListItem({ title, desc, id }: ListItemProps) {
 					<CheckIcon/>
 				</div>
 				<div className={styles.itemTopButtons}>
-					<button onClick={() => dispatch(changeTodoState(id))} className={styles.itemTopButtonsSingle} title="Undo completing" aria-label='undo'>
+					<button 
+						onClick={() => {
+							setDisappearDelay(true)
+							setTimeout(() => {
+								dispatch(changeTodoState(id))
+							}, transitionTime)
+						}} 
+						className={styles.itemTopButtonsSingle} 
+						title="Undo completing" 
+						aria-label='undo'
+					>
 						<UndoIcon/>
 					</button>
 					{confirmDelete ?
