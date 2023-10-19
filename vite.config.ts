@@ -6,5 +6,6 @@ export default defineConfig({
 	plugins: [react(), svgLoader()],
 	server: {
 		port: 3000
-	}
+	},
+	base: "/recruitment-frontend/"
 })
