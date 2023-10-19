@@ -1,11 +1,10 @@
 # Avalio recruitment task
 
 Simple to-do app, created with [Vite](https://vitejs.dev/).
-
+There is few predefined todos included.
 
 ## Demo
 Demo is available here: [Demo](https://filiplusnia.github.io/recruitment-frontend/)
-
 
 ## Starting the project locally
 
@@ -20,6 +19,14 @@ Installs required dependencies
 Launches the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+## Unit test
+
+App has a simple unit test. When in the root directory of the project, type:
+
+### `npm run test`
+
+This test will check whether list items render title and description properly.
+
 
 ## Functionalities 
 
@@ -32,4 +39,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### Additional
 
 * Editing todos
+* Un-completing todos
 * Todos save in local storage through redux middleware
